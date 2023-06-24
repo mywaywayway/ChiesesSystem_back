@@ -3,10 +3,10 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://yeh-wang.rwlb.cn-chengdu.rds.aliyuncs.com:3307/drive_system
+    url: jdbc:mysql://yeh-wang.rwlb.cn-chengdu.rds.aliyuncs.com:3307/traditional_chinese_medicine_system
     username: root
     password: 123456&wYx
-    type: com.alibaba.druid.pool.DruidDataSource
+
 
 mybatis-plus:
   configuration:
