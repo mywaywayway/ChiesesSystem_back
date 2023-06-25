@@ -37,5 +37,11 @@ public class CustomersEntity {
     @TableField("contact_number")
     private String contactNumber;
 
+    @TableField("user_name")
+    private  String userName;
+
+    @TableField("password")
+    private  String password;
+
 
 }

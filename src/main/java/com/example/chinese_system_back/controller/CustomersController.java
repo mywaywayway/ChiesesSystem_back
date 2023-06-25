@@ -1,9 +1,13 @@
 package com.example.chinese_system_back.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.example.chinese_system_back.entity.CustomersEntity;
+import com.example.chinese_system_back.mapper.CustomersMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 /**
  * <p>
@@ -16,6 +20,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/customers-entity")
 public class CustomersController {
+       @Autowired
+    CustomersMapper customersMapper;
+
+
+       @ResponseBody
+    @PostMapping("/login")
+    public List<CustomersEntity> login(@RequestBody CustomersEntity customersEntity){
+
+        return customersMapper.selectList(Wrappers.<CustomersEntity>lambdaQuery().eq(CustomersEntity::getUserName,customersEntity.getUserName()).eq(CustomersEntity::getPassword,customersEntity.getPassword()));
+    }
+
+
 
 }
 

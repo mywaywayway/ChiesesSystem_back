@@ -40,5 +40,9 @@ public class EmployeesEntity {
     @TableField("power")
     private Integer power;
 
+   @TableField("user_name")
+    private  String userName;
 
+    @TableField("password")
+    private  String password;
 }
