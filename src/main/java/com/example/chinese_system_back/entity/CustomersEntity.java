@@ -43,5 +43,10 @@ public class CustomersEntity {
     @TableField("password")
     private  String password;
 
+     @TableField("email")
+    private  String email;
+
+     @TableField("gender")
+    private  String gender;
 
 }
