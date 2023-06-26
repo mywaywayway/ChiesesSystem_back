@@ -45,4 +45,7 @@ public class EmployeesEntity {
 
     @TableField("password")
     private  String password;
+
+    @TableField("gender")
+    private String gender;
 }

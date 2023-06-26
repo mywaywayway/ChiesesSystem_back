@@ -44,5 +44,10 @@ public class MedicinesEntity {
     @TableField("stock_unit")
     private String stockUnit;
 
+    @TableField("photo_url")
+    private String photoUrl;
+
+    @TableField("introduction")
+    private String introduction;
 
 }
