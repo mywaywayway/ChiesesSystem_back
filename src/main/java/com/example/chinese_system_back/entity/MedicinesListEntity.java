@@ -4,28 +4,21 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.math.BigDecimal;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.Accessors;
 
 /**
- * <p>
- * 
- * </p>
- *
- * @author Double-Hong and My-way 
- * @since 2023-06-24 19:16:12
- */
+ * @author :Double-Hong
+ * @name :ChiesesSystem_back
+ * @date :2023/6/26
+ * @time :21:18
+ **/
+@Data
+@TableName("medicines_list")
 @Getter
 @Setter
-@Accessors(chain = true)
-@TableName("medicines")
-@ApiModel(value = "MedicinesEntity对象", description = "")
-public class MedicinesEntity {
-
+public class MedicinesListEntity {
     @TableId(value = "medicine_id", type = IdType.AUTO)
     private String medicineId;
 
@@ -50,4 +43,6 @@ public class MedicinesEntity {
     @TableField("introduction")
     private String introduction;
 
+    @TableField("supplier_name")
+    private String supplierName;
 }

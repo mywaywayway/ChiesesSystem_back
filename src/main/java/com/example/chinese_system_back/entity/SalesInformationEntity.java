@@ -40,10 +40,10 @@ public class SalesInformationEntity {
     private LocalDate salesDate;
 
     @TableField("quantity")
-    private BigDecimal quantity;
+    private double quantity;
 
     @TableField("TotalPrice")
-    private BigDecimal totalPrice;
+    private double totalPrice;
 
     @TableField("unit")
     private String unit;
