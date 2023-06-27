@@ -31,5 +31,15 @@ public class SuppliersController {
 
         return suppliersMapper.selectList(Wrappers.<SuppliersEntity>lambdaQuery().eq(SuppliersEntity::getUserName,suppliersEntity.getUserName()).eq(SuppliersEntity::getPassword,suppliersEntity.getPassword()));
     }
+
+    /**
+     * 获取所有供应商
+     * @return 供应商列表
+     */
+
+    @GetMapping("/getSuppliers")
+    public List<SuppliersEntity> getSuppliers(){
+        return suppliersMapper.selectList(null);
+    }
 }
 
