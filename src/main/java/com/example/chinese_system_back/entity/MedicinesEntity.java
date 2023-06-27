@@ -36,10 +36,10 @@ public class MedicinesEntity {
     private String supplierId;
 
     @TableField("unit_price")
-    private BigDecimal unitPrice;
+    private double unitPrice;
 
     @TableField("stock_quantity")
-    private BigDecimal stockQuantity;
+    private double stockQuantity;
 
     @TableField("stock_unit")
     private String stockUnit;

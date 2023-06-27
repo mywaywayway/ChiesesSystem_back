@@ -43,4 +43,7 @@ public class SuppliersEntity {
     @TableField("password")
     private  String password;
 
+    @TableField("email")
+    private  String email;
+
 }

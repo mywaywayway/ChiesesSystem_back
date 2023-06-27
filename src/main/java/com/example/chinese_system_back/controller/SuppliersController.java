@@ -31,5 +31,17 @@ public class SuppliersController {
 
         return suppliersMapper.selectList(Wrappers.<SuppliersEntity>lambdaQuery().eq(SuppliersEntity::getUserName,suppliersEntity.getUserName()).eq(SuppliersEntity::getPassword,suppliersEntity.getPassword()));
     }
+
+    @ResponseBody
+    @GetMapping("/getSupplierById/{supplierId}")
+    public SuppliersEntity getSupplierById(@PathVariable String supplierId){
+        return suppliersMapper.selectOne(Wrappers.<SuppliersEntity>lambdaQuery().eq(SuppliersEntity::getSupplierId,supplierId));
+    }
+
+    @ResponseBody
+    @PostMapping("/updateSupplier")
+    public int updateSupplier(@RequestBody SuppliersEntity suppliersEntity){
+        return suppliersMapper.updateById(suppliersEntity);
+    }
 }
 

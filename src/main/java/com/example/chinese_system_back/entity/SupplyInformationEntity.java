@@ -40,7 +40,7 @@ public class SupplyInformationEntity {
     private LocalDate supplyDate;
 
     @TableField("quantity")
-    private BigDecimal quantity;
+    private double quantity;
 
     @TableField("unit")
     private String unit;

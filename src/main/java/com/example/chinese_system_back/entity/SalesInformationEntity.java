@@ -4,10 +4,8 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -40,10 +38,10 @@ public class SalesInformationEntity {
     private LocalDate salesDate;
 
     @TableField("quantity")
-    private BigDecimal quantity;
+    private double quantity;
 
     @TableField("TotalPrice")
-    private BigDecimal totalPrice;
+    private double totalPrice;
 
     @TableField("unit")
     private String unit;
