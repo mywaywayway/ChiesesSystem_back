@@ -31,6 +31,10 @@ public class SalesInformationController {
     public int insert(@RequestBody SalesInformationEntity salesInformationEntity){
            UUID uuid = UUID.randomUUID();
            salesInformationEntity.setSalesId(uuid.toString());
+           MedicinesEntity medicinesEntity= medicinesMapper.selectOne(Wrappers.<MedicinesEntity>lambdaQuery().eq(MedicinesEntity::getMedicineId,salesInformationEntity.getMedicineId()));
+
+           medicinesEntity.setStockQuantity(medicinesEntity.getStockQuantity()-salesInformationEntity.getQuantity());
+           medicinesMapper.updateById(medicinesEntity);
            return salesInformationMapper.insert(salesInformationEntity);
        }
 }

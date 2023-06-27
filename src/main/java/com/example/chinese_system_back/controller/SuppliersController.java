@@ -41,5 +41,16 @@ public class SuppliersController {
     public List<SuppliersEntity> getSuppliers(){
         return suppliersMapper.selectList(null);
     }
+    @ResponseBody
+    @GetMapping("/getSupplierById/{supplierId}")
+    public SuppliersEntity getSupplierById(@PathVariable String supplierId){
+        return suppliersMapper.selectOne(Wrappers.<SuppliersEntity>lambdaQuery().eq(SuppliersEntity::getSupplierId,supplierId));
+    }
+
+    @ResponseBody
+    @PostMapping("/updateSupplier")
+    public int updateSupplier(@RequestBody SuppliersEntity suppliersEntity){
+        return suppliersMapper.updateById(suppliersEntity);
+    }
 }
 
